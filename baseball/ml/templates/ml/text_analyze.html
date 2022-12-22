@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    KEYWORDS
+{% endblock title %}
+
+{% block content %}
+
+    <!doctype html>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Fixed navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                               name="keyword">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+        <div class="container">
+            <h1> 우측 상단의 검색창에 선수명을 검색해보세요!</h1>
+            <h1> 우측 상단의 검색창에 선수명을 검색해보세요!</h1>
+            <h2> 해당 선수와 관련된 키워드를 검색하여 네트워크 그래프로 나타냅니다.</h2>
+            <p> SNS 데이터 수집과 데이터 분석을 위해 약 2~3분 정도 소요될 수 있습니다.</p>
+            {% if chart %}
+                <img src="data:image/png;base64, {{ chart|safe }}" alt="" style="width:600px; height:600px">
+            {% endif %}
+
+            {% if pos %}
+                <img src="data:image/png;base64, {{ pos|safe }}" alt="" style="width:600px; height:600px">
+            {% endif %}
+        </div>
+
+    </main>
+
+
+{% endblock content %}

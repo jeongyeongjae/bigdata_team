@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    KEYWORDS
+{% endblock title %}
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+        <header class="blog-header lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="#">Subscribe</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="#">BIG DATA LAB</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                             viewBox="0 0 24 24"><title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5"/>
+                            <path d="M21 21l-5.2-5.2"/>
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+
+    </div>
+
+    <main class="container">
+        <h4> &lt; 머신러닝의 개요 &gt; </h4>
+        <p>머신러닝은 인공지능(AI)의 한 분야로, 데이터 분석을 위한 모델 생성을 자동화하여
+        소프트웨어가 데이터를 바탕으로 학습하고 패턴을 찾아 냅니다.
+        이를 통해 사람의 개입을 최소화 하고 빠르게 의사 결정을 내릴 수 있도록 지원합니다.</p>
+        <hr>
+
+        <h4> &lt; 머신러닝의 발전 &gt; </h4>
+        <p>오늘날의 머신러닝은 과거의 머신러닝과는 다른 모습을 보이고 있습니다. 머신러닝 기술은
+        특정한 과제를 수행하도록 프로그래밍하지 않아도 컴퓨터가 학습할 수 있다는 이론과 데이터 패턴 인식이 어우러져 탄생했습니다. </p>
+        <p>새로운 데이터에 노출됨에 따라 독립적으로 최적화를 수행한다는 점에서 머신러닝에서는 반복적 측면이 중요한데,
+             이전 연산 결과를 학습하여 믿을 수 있는 의사 결정 및 결과를 반복적으로 산출하기 때문입니다
+             머신러닝은 새로운 개념은 아니지만 새롭게 각광 받고 있는 분야로 떠오르고 있습니다.</p>
+
+        <p>오랜 기간 수많은 머신러닝 알고리즘이 등장하였지만 새로운 기술의 발전에 힘입어 복잡한 수학적 계산을 반복하여
+            더욱 빠르게 빅 데이터 분석에 자동으로 적용할 수 있는 기술들이 개발되고 있습니다.
+            머신러닝이 상용화 되면서 주변에서 쉽게 접할 수 있는 몇 가지 사례는 아래와 같습니다.</p>
+        <ul type = "disk">
+            <li>대대적인 홍보를 하고 있는 Google의 자동 주행 자동차</li>
+            <li>Amazon과 Netflix에서 제공하는 온라인 상품 추천 시스템</li>
+            <li>Twitter (mention 분석을)를 통한 고객의 기업 평가 분석과 같은 텍스트 분석</li>
+        </ul>
+        <hr>
+
+        <h4> &lt; 라쏘 회귀(Lasso Regression) &gt; </h4>
+        <p>LASSO와 Ridge는 선형 회귀의 단점을 보완해 범용성을 부여하기 위해 만들어진 도구들입니다.</p>
+        <p>기존의 선형 회귀에선 적절한 가중치와 편향을 찾아내는 것이 관건이었습니다. 라쏘는 거기에 추가적인 제약 조건을 줍니다.
+            바로 MSE가 최소가 되게 하는 가중치와 편향을 찾으면서 동시에, 가중치들의 절댓값의 합이 최소가 되게 한다는 것입니다.
+            다시 말해, 가중치의 모든 원소가 0이 되거나 0에 가깝게 되도록 해야 합니다.
+            따라서 어떠한 특징들은 모델을 만들 때 사용되지 않기도 합니다.
+            어떤 벡터 요소의 절댓값의 합은 L1-norm입니다. 즉, 라쏘는 L1-norm 페널티를 가진 선형 회귀 방법입니다. </p>
+        <hr>
+
+
+        <h4> &lt; 릿지 회귀(Ridge Regression) &gt; </h4>
+        <p>릿지 회귀는 기존 선형 모델에 규제항을 추가한 회귀 모델입니다.</p>
+        <p>라쏘와 굉장히 유사한 릿지에 대해 간단히만 언급하자면 패널티 항에 L1-norm 대신에 L2-norm 패널티를 가집니다.
+            차이가 있다면 라쏘는 가중치들이 0이 되지만, 릿지의 가중치들은 0에 가까워질 뿐 0이 되지는 않습니다.
+            특성이 많은데 그중 일부분만 중요하다면 라쏘가,
+            특성의 중요도가 전체적으로 비슷하다면 릿지가 좀 더 괜찮은 모델을 찾아줄 것입니다.</p>
+        <hr>
+
+        <h4> &lt; 랜덤 포레스트(Random Forest) &gt; </h4>
+        <p>랜덤 포레스트는 분류, 회귀 분석 등에 사용되는 앙상블 학습 방법의 일종으로, 훈련 과정에서 구성한 다수의 결정 트리로부터
+            부류(분류) 또는 평균 예측치(회귀 분석)를 출력함으로써 동작합니다.</p>
+        <p>랜덤 포레스트의 가장 큰 특징은 랜덤성에 의해 트리들이 서로 조금씩 다른 특성을 갖는다는 점입니다.
+            이 특성은 각 트리들의 예측들이 비상관화 되게하며, 결과적으로 일반화 성능을 향상 시킵니다.
+            또한, 랜덤화는 포레스트가 노이즈가 포함된 데이터에 대해서도 강인하게 만들어 줍니다.
+            랜덤화는 각 트리들의 훈련 과정에서 진행되며, 랜덤 학습 데이터 추출 방법을 이용한 앙상블 학습법인 배깅과 랜덤 노드 최적화가 자주 사용되고 있습니다.
+            이 두 가지 방법은 서로 동시에 사용되어 랜덤화 특성을 더욱 증진 시킬 수 있습니다.</p>
+        <hr>
+
+        <h4> &lt; XGBoost (Extreme Gradient Boosting) &gt; </h4>
+        <p>XGBoost는 Gradient Boosting 알고리즘을 분산환경에서도 실행할 수 있도록 구현해놓은 라이브러리입니다.
+            Regression, Classification 문제를 모두 지원하며, 성능과 자원 효율이 좋아서, 인기 있게 사용되는 알고리즘입니다.
+        </p>
+        <p>XGBoost의 장점</p>
+        <ul type = "disk">
+            <li>GBM 대비 빠른 수행시간 -> 병렬 처리로 학습, 분류 속도가 빠릅니다.</li>
+            <li>과적합 규제 -> 표준 GBM 경우 과적합 규제기능이 없으나, XGBoost는 자체에 과적합 규제 기능으로 강한 내구성 지닙니다.</li>
+            <li>분류와 회귀영역에서 뛰어난 예측 성능 발휘합니다 즉, CART(Classification and regression tree) 앙상블 모델을 사용합니다.</li>
+            <li>Early Stopping(조기 종료) 기능이 있습니다.</li>
+            <li>다양한 옵션을 제공하며 Customizing이 용이합니다.</li>
+        </ul>
+
+
+    </main>
+
+    <footer class="blog-footer">
+        <p>신라대학교 빅데이터 연구실 - 국제관 433호 </p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+
+
+</body>
+
+
+{% endblock content %}

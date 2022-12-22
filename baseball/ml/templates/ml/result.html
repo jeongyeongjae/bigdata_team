@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    RESULT
+{% endblock title %}
+
+{% block content %}
+
+
+    <main>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">예측 결과</h1>
+                    <p class="lead text-muted">제공된 정보를 바탕으로 한 {{ batter_name }}선수의 승률 예측 결과와 분석입니다.</p>
+                    <p>OPS : {{ OPS }}</p>
+                    <p> OBP : {{ OBP }}</p>
+                    <p> SLG : {{ SLG }}</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="data:image/png;base64, {{ obp_chart|safe }}" alt="">
+
+                            <div class="card-body">
+                                <p class="card-text">변수별 OBP 수치 예측에서의 중요도</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="data:image/png;base64, {{ slg_chart|safe }}" alt="">
+
+                            <div class="card-body">
+                                <p class="card-text">변수별 SLG 수치 예측에서의 중요도</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="data:image/png;base64, {{ team_ops_chart|safe }}" alt="">
+
+
+                            <div class="card-body">
+                                <p class="card-text">팀별 OPS 성적 그래프</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    {##}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                    <div class="col">#}
+                    {#                        <div class="card shadow-sm">#}
+                    {#                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"#}
+                    {#                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"#}
+                    {#                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>#}
+                    {#                                <rect width="100%" height="100%" fill="#55595c"/>#}
+                    {#                                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
+                    {#                            </svg>#}
+                    {##}
+                    {#                            <div class="card-body">#}
+                    {#                                <p class="card-text">This is a wider card with supporting text below as a natural#}
+                    {#                                    lead-in to additional content. This content is a little bit longer.</p>#}
+                    {##}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {#                </div>#}
+                </div>
+            </div>
+
+    </main>
+
+
+
+
+{% endblock content %}
